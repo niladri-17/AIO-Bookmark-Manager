@@ -1,0 +1,97 @@
+@import url(styles.css);
+
+#bookmark-list {
+    margin-bottom: 1rem; /* 10px */
+    list-style-type: none;
+    max-height: 40rem; /* 400px */
+    overflow-y: auto; /* Add vertical scrollbar */
+    padding-right: 1rem; /* Ensure gap between scrollbar and items */
+  }
+  
+  /* Bookmark Item Styles */
+  .bookmark-item {
+    font-size: 1.15rem; /* 11.5px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem; /* 5px */
+    padding: 0.5rem; /* 5px */
+    border: 0.1rem solid #ddd; /* 1px */
+    border-radius: 0.4rem; /* 4px */
+    background-color: #fff;
+    cursor: pointer; /* Pointer cursor for normal state */
+    transition: background-color 0.3s, color 0.3s;
+    position: relative; /* To position the dropdown menu */
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode .bookmark-item {
+    background-color: #333;
+    color: white;
+  }
+  
+  .bookmark-item img.favicon {
+    width: 1.6rem; /* 16px */
+    height: 1.6rem; /* 16px */
+    margin-right: 1rem; /* 10px */
+  }
+  
+  .bookmark-title {
+    flex-grow: 1;
+  }
+  
+  /* Dropdown Menu */
+  .more-options {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.6rem; /* 16px */
+    margin-left: 1rem; /* 10px */
+  }
+  
+  .more-options:hover {
+    color: black;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.4rem; /* 4px */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 10rem; /* 100px */
+    font-size: 1.4rem; /* 14px */
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-menu button {
+    display: block;
+    padding: 0.5rem 1rem; /* 5px 10px */
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .dropdown-menu button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown-menu button:active {
+    background-color: #ddd;
+  }
+  
+  /* Dragging State */
+  .dragging {
+    opacity: 0.5;
+    cursor: pointer; /* Pointer cursor for dragging state */
+  }
+  

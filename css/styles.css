@@ -1,0 +1,138 @@
+/* Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  box-sizing: border-box;
+  width: 30rem; /* 300px */
+  padding: 2rem; /* 20px */
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  overflow: hidden; /* To apply scrollbar styling */
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+h1 {
+  font-size: 1.8rem; /* 18px */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* 10px */
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem; /* 20px */
+  color: inherit; /* Ensures the icon color matches the text color */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Toast Notification */
+.toast {
+  visibility: hidden;
+  min-width: 20rem; /* 200px */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem; /* 5px */
+  padding: 1rem; /* 10px */
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem; /* 30px */
+  font-size: 1.4rem; /* 14px */
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); /* 10px */
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  top: -1rem; /* 10px */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 1rem; /* 10px */
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 3rem; /* 30px */
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 3rem; /* 30px */
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0.7rem; /* 7px */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.5rem; /* 5px */
+}
+
+#bookmark-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

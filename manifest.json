@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "AIO Manager",
+  "version": "1.0",
+  "description": "A simple bookmark manager.",
+  "permissions": ["storage", "bookmarks", "tabs", "alarms", "notifications"],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon/icon32.png",
+      "48": "icon/icon64.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

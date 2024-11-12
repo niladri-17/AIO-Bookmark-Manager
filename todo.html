@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/todo.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>To-Do List</h1>
+      <!-- Plus Icon Button -->
+      <button id="add-task-button" class="add-task-button">➕</button>
+      <a href="popup.html"><button class="back-button">&#8592;</button></a>
+    </div>
+    <div id="todo-list-items" class="todo-list"></div>
+
+    <!-- Modal HTML Structure -->
+    <div id="task-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Add New Task</h2>
+        <textarea type="text" id="new-task-input" placeholder="Enter new task">
+        </textarea>
+        <button id="confirm-task-button">Add Task</button>
+      </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>
